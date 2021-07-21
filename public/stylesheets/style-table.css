@@ -1,0 +1,423 @@
+@media (min-width:769px) and (max-width:1198px){
+    
+    .hei-100{
+        height: 100%;
+    }
+    
+    body{
+        background-color: rgb(227, 227, 227);
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    /* ---------------nav-bar------------------------- */
+    
+    .act-down{
+        position:absolute;
+        z-index:9;
+        margin-top: 30px;
+        left: 0%;
+        color: black;
+        background-color: rgb(245, 255, 0);
+        width:100%;
+    }
+    
+    .des-down{
+        display: none;
+    }
+    
+    .desp-sec a{
+        color: #41464b
+    }
+    
+    .desp-sec a:hover{
+        color: black;
+    }
+    
+    .search-form{
+        background-color: #41464b
+    }
+    
+    .search-btn{
+        background-color: rgb(245, 255, 0);
+    }
+
+     #nav-contact{
+        display: none;
+    }
+
+    .home-btn,
+    .home-sec,
+    .desp-sec a{
+        font-size: 3vh;
+    }
+    
+    .navbar-secciones{
+        display:none;
+        position: fixed;
+    }
+    
+    .sec-a:hover{
+        background-color: rgb(245, 255, 0);
+    }
+    
+    
+    .bor-izq,
+    .bor-der{
+        display: none;
+    }
+    
+    .ult-noticias{
+        padding: 0%;
+       height: 30vh; 
+    }
+    
+    .not-1-seccion,
+    .not-2-seccion{
+        overflow: hidden;
+        padding: 0%;
+        height: 50vh;
+        width: 100%;
+        position: relative;
+        transition: transform .50s;
+    }
+    
+    .not-2-seccion:hover{
+        z-index: 99;
+        transform:scale(1.2) ;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4);
+    }
+    
+    .not-1-seccion:hover{
+        z-index: 99;
+        transform:scale(1.2) ;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4);
+    }
+    
+    .capa-link{
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .not-1-seccion .datos-tsec-1-d,
+    .not-1-seccion .datos-tsec-1-i,
+    .not-2-seccion .datos-tsec-2{    
+        padding: 3%;
+        text-align: left;
+        position: absolute;
+        bottom: 0%;
+        background-color: white;
+        width: 100%;
+        height: 20%;
+    }
+    
+    .not-1-seccion .datos-tsec-1-d{
+        background-color: rgb(245, 255, 0);
+        left: 0%;
+    }
+    
+    .not-1-seccion .datos-tsec-1-i{
+        background-color: rgb(245, 255, 0);
+        right:0%;
+    }
+    
+    
+    
+    .not-1-seccion  .img-tsec-1{
+        z-index: -1;
+        position: absolute;
+        top:0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .not-1-seccion  .img-tsec-1 img{
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .not-2-seccion  .img-tsec-2{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .not-2-seccion  .img-tsec-2 img{
+        width: 100%;
+        height: 100%;
+    }
+    
+   
+    
+    
+    .sec-box-not{
+        position: absolute;
+        top: -90%;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 5vh;
+        color: rgb(245, 255, 0);
+        font-family: 'Roboto', sans-serif;
+        font-weight:bolder;
+    }
+    .tit-box-not{
+        font-family: 'DM Serif Display', serif;
+        font-size: 2vh;
+        text-decoration: none;
+        color: black;
+    }
+
+
+    .bajada-box-not{
+        font-family: 'Roboto', sans-serif;
+        font-size:15px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-weight:lighter;
+        text-decoration: none;
+    }
+    
+    
+    
+    .bar-dolar{
+
+        margin: 0%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #41464b17;
+        font-family: 'DM Serif Display', serif;
+        color: rgb(0, 0, 0);
+    }
+    
+    .bar-dolar a{
+        width: 100%;
+        color:rgb(100, 100, 100);
+        text-decoration: none;
+    }
+    
+    /* -------------------seccion-home-videos---------------- */
+    
+    .videos-sec-tit{  
+        overflow: hidden;
+        padding: 0%;
+        height: 8vh;
+        position: relative;
+        font-family: 'DM Serif Display', serif;
+        font-size: 7vh;
+        font-weight:bold;
+    
+    }
+    
+    .videos-sec-all,.videos-sec-rep{
+        overflow: hidden;
+        padding: 0%;
+        height: 50vh;
+        position: relative;
+    }
+    
+    .box-vid{
+        width: 100%;
+        height:20vh;
+        position:relative;
+    }
+    
+    .capa-transparente{
+        position:absolute;
+        top:0%;
+        left:0%;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+    }
+    
+    .videos-sec-all{
+        overflow-y: scroll;
+    }
+    
+    .rep-vid{
+        z-index: 9;
+        position:absolute;
+        top:0%;
+        left:0%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .not-date{
+        background-color: white;
+        padding-top: 3%;
+        text-align: left;
+        font-family: 'DM Serif Display', serif;
+        font-size:1vh;
+        color: rgba(0, 0, 0, 0.5);
+        font-weight:lighter;
+    }
+    
+    .not-autor{
+        
+        color: rgba(0, 0, 0, 0.9);
+    }
+    
+    .not-sec-ppal{
+        background-color: white;
+        font-size: 3vh;
+        color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .not-tit{
+        background-color: white;
+        text-align: center;
+        position: relative;
+        font-family: 'DM Serif Display', serif;
+        font-size: 5vh;
+        font-weight:bold;
+        padding:3%;
+    }
+    
+    .not-bajada{
+        background-color: white;
+        text-align: center;
+        position: relative;
+        font-family: 'DM Serif Display', serif;
+        font-size: 2vh;
+        font-weight:normal;
+        padding-bottom: 10%;
+    }
+    
+    .not-img-ppal{
+        padding: 0%;
+        overflow: hidden;
+        height: 30vh;
+        position: relative;
+    }
+    
+    .not-img-ppal img{
+        padding: 0%;
+        width: 100%;
+        font-size: 2vh;
+        font-weight:bold;
+    }
+    
+    .img-epi{
+        padding: 1%;
+        height: 7vh;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 2vh;
+        font-weight:bold;
+    }
+    
+    .not-cuerpo{
+        white-space:pre-line;
+        background-color: white;
+        padding-top: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 10%;
+        font-size: 2vh;
+        font-weight:normal;
+    }
+    
+    
+    /* -------------------usuario----------------- */
+    
+    .datos-user{
+        position: relative;
+        background-color: white;
+        padding-top: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 10%;
+        font-size: 20px;
+    }
+    
+    .noti-user-tit{
+        overflow: hidden;
+        padding: 0%;
+        height: 150px;
+        position: relative;
+        font-family: 'DM Serif Display', serif;
+        font-size: 80px;
+        font-weight:bold;
+    }
+    
+    .btn-not{
+        margin-top: 10%;
+        text-align: center;
+        padding: 2%;
+        background-color: rgb(245, 255, 0);
+        border:1px solid black;
+    }
+    .btn-not:hover{
+        background-color: rgb(0, 0, 0);
+        border:1px solid rgb(245, 255, 0);
+    }
+    
+    .btn-not a{
+        color: rgb(88, 88, 88);
+    }
+    
+    .btn-not a:hover{
+        color: rgb(245, 255, 0);
+    }
+    
+    
+    .act-op{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        padding-top: 20%;
+    }
+    
+    .des-op{
+        display: none;
+    }
+    
+    .op-edit-not{
+        background-color: rgba(77, 78, 11, 0.4);
+        height: 50%;
+        width: 100%;
+    }
+    
+    
+    
+    /* ---------------imagenes de la noticia-single----- */
+    .img-not{
+        padding: 0%;
+        height: 40vh;
+    }
+    
+    .not-img-muestra{
+        padding: 0%;
+        overflow: hidden;
+        height: 30vh;
+        position: relative;
+    }
+    
+    .not-img-muestra img{
+        width: 100%;
+    }
+    
+    /* --------------------comentarios de las noticias------------------ */
+    .comentarios-sec-tit{  
+        overflow: hidden;
+        padding: 0%;
+        height: 8vh;
+        position: relative;
+        font-family: 'DM Serif Display', serif;
+        font-size: 6vh;
+        font-weight:bold;
+    
+    }
+    
+    .not-comentarios-txt {
+        padding: 2%;
+        font-weight: bold;
+        color: #4d4b4b;
+        border-top: 1px solid #4d4b4b;
+    }
+}

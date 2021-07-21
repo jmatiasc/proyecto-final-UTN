@@ -1,0 +1,49 @@
+
+<div class="container"> 
+        <div style="height:20vh;padding-top:5vh;">
+              <a href="/usuario" class="btn btn-info mt-4 mb-4">Volver a menu de usuario</a>
+        </div>
+    <div class="" style="padding-top: 2%;"> 
+        <h1>CREAR USUARIO</h1>
+         <p class="text-danger text-center mt-3">{{message}}</p>
+            <div class="mt-10 shadow-lg p-3 mb-5 rounded bg-dark text-white" >
+                <form  method="post" action="/administrador/create" class=" mt-5" enctype="multipart/form-data"> 
+                  
+                  <div class="mb-3 " style="padding: 2%;">
+                         <label class="" for="btncheck1">Imagen de perfil</label>
+                         <input type="file" class="form-control text-white" style="background-color:#4d4b4b" id="exampleFormControlInput1" placeholder="" name="imagen" id="imagen">
+                  </div>
+
+                  <div class="mb-3 " style="padding: 2%;">
+                    <label class="" for="btncheck1">Nombre</label>
+                    <input type="tex" class="form-control text-white" style="background-color:#4d4b4b" id="exampleFormControlInput1" placeholder="" name="nombre" >
+
+                    
+                    <label class="" for="btncheck1">Apellido</label>
+                    <input type="tex" class="form-control text-white" style="background-color:#4d4b4b" id="exampleFormControlInput1" placeholder="" name="apellido">
+
+                    <label class="" for="btncheck1">Email</label>
+                    <input type="email" class="form-control text-white" style="background-color:#4d4b4b" id="exampleFormControlInput1" placeholder="" name="email">
+                  </div>
+
+                    <div class="mb-3 " style="padding: 2%;">
+                        <label class="" for="btncheck1">Contraseña</label>
+                        <input type="password" class="form-control text-white" style="background-color:#4d4b4b" id="exampleFormControlInput1" placeholder="" name="pass" >
+                    </div>
+
+                    <label class="" for="btncheck1">es admin: </label>
+                    <select name="admin" >
+                         <option value="1">no</option> 
+                         <option value="0">si</option>                               
+                    </select>
+
+
+                  <div class="d-flex justify-content-center mt-5 " style="padding: 2%;">
+                    <button type="submit" class="btn btn-info mt-4 mb-4 ">crear usuario</button>
+                  </div>
+                </form>
+          </div>
+        </div>
+
+
+</div>

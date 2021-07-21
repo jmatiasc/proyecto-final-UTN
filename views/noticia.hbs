@@ -1,0 +1,283 @@
+<div class="container">
+    <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-12 mb-12" >
+
+          <div class="row" style="text-align:center;font-weight:bold;">
+            <div class="col-0 col-sm-0 col-md-0 col-lg-2 col-xl-2  " >
+                    <a href="" style="width: 100%;heigth:100%;text-decoration:none;color:black;">
+                    <div class="mt-1 " style="position: relative;">
+                        <img src="/images/logo-news.png" alt="" style="width: 100%;">
+                    </div> 
+                </a>        
+            </div>
+
+            <div class="col-0 col-sm-0 col-md-0 col-lg-2 col-xl-2" style="background-color:rgb(245, 255, 0);" id="nav-home">
+                <a href="/" style="width: 100%;heigth:100%;text-decoration:none;color:black;">
+                    <div class="mt-4 pt-2 home-btn" style="position: relative;">
+                        HOME
+                    </div> 
+                </a>
+            </div>
+            <div class="col-0 col-sm-0 col-md-0 col-lg-2 col-xl-2 " style="position: relative;background-color: #41464b " onmouseover="desplegarSeccion()" onmouseout="esconderSeccion()" > 
+                 <div class="mt-4 pt-2 home-sec" style="position: relative;color:rgb(245, 255, 0);">
+                    SECCIONES
+                 </div> 
+                <div id="dropdown-secc" class="des-down"  >
+                     {{#each secciones}}
+                        <div class="mt-2 mb-2 desp-sec" >
+                            <a href="/noticias/seccion/{{id}}" style="text-decoration: none;  ">{{nombre}}</a>
+                        </div>
+                    {{/each}}
+                </div>
+
+            </div>
+
+            <div class="search-form col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pt-4 pb-4" >
+                <form  class="d-flex " method="post" action ="/noticias/buscar" >
+                    <input class="form-control"  type="search" placeholder="Search..." aria-label="Search" name="dato" id="dato">
+                    <button class="btn search-btn"  type="submit"><i class="fas fa-search  "></i></button>
+                </form>
+            </div>
+
+           </div>          
+
+        </div>
+
+        <div class="bor-izq col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 ">
+            <div class="navbar-secciones " >
+                <div class="bar-secc " >
+                    <div class="tit-secc">
+                        Navegá con <br>
+                        un click!
+                    </div> 
+
+                    <div class="mt-2 mb-2 sec-a" >
+                        <a href="#titular">#Titular</a>
+                    </div>
+                    <div class="mt-2 mb-2 sec-a" >
+                        <a href="#qpaso">#Que pasó?</a>
+                    </div>
+                    <div class="mt-2 mb-2 sec-a" >
+                        <a href="#imagenes">#Imagenes</a>
+                    </div>
+                    <div class="mt-2 mb-2 sec-a" >
+                        <a href="#comentarios">#Comentarios</a>
+                    </div>
+
+                    <div class="bar-sec-redes">
+                       <a href=""> Facebook</a> | <a href="">Youtube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="centro-noticias col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+            <div class="row">      
+
+                 
+
+                <div class="seccion-noticias col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="row">
+                                <div class="not-date col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="not-sec-ppal">{{noticia.nombreSeccion}}</div>
+                                   {{noticia.ts_update}} 
+                                   <div class="not-autor">
+                                       <strong>Autor :</strong> {{noticia.nombreAutor}} {{noticia.apellidoAutor}}
+                                   </div>
+                                </div>  
+                                <div class="not-tit col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="titular">
+                                   {{noticia.titular}}
+                                </div>   
+
+                                <div class="not-bajada col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                   {{noticia.bajada}}
+                                </div>   
+
+                                <div class="not-img-ppal col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                   <img src="/images/{{noticia.imagen}}" alt="" >
+                                </div> 
+                                <div class="img-epi col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                       {{noticia.epigrafe}}
+                                </div>  
+
+                                <div class="not-cuerpo col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="qpaso">
+                                   {{noticia.cuerpo}}
+                                </div> 
+
+                                 {{#if imagenes}}
+                                    <div class="img-not col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="imagenes">
+                                        <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel" >
+                                        <div class="carousel-inner " >
+                                            <div class="carousel-item  active ">   
+                                                <div class="not-img-muestra col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                    <img src="/images/{{noticia.imagen}}" alt="" >
+                                                </div> 
+                                                <div class="img-epi col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                    {{noticia.epigrafe}}
+                                                </div>  
+                                            </div>  
+                                            {{#each imagenes}}
+                                            <div class="carousel-item  ">   
+                                                <div class="not-img-muestra col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                    <img src="/images/{{nombre}}" alt="" >
+                                                </div> 
+                                                <div class="img-epi col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                    {{epigrafe}}
+                                                </div>  
+                                            </div>  
+                                            {{/each}}                 
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                        </div>
+                                    </div>
+                                 {{/if}}
+                                <div class="comentarios-sec-tit col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-2 " id="comentarios">
+                                    #Comentarios
+                                </div>
+                                 <div class="not-comentarios col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="">
+                                  {{#each comentarios}}
+                                    <div class="not-comentarios-txt col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2 mb-2  " id="">
+                                            {{texto}}
+                                    </div>
+                                  {{/each}}  
+                                  
+                                   <form  method="post" action="/noticias/addComentario/{{noticia.id}}" class=" mt-5" style="border-top: 1px solid #4d4b4b;">
+                                        <div class="" style="padding:1%;">
+                                            <label class="mt-2 mb-4" for="btncheck1" style="font-size:30px;font-weight: bold;color: #4d4b4b;">Agregar comentario</label>
+                                            <textarea class="form-control " style="background-color:rgb(227, 227, 227);color:#4d4b4b; border:1px solid #4d4b4b;" id="exampleFormControlTextarea1" rows="5" placeholder="Escribir comentario..." name="texto"></textarea>
+                                        </div>
+                                        <div class="d-flex justify-content-end  " >
+                                            <button type="submit" class="btn btn-warning mt-2 mb-2 ">Enviar comentario</button>
+                                        </div>
+                                   </form>       
+                                </div> 
+
+                    </div>
+
+                </div>
+        
+                <div class="seccion-noticias col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="row">
+                         <div class="videos-sec-tit col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-2 ">
+                             #Videos
+                         </div>
+                         <div class="videos-sec-tit col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-2 ">                           
+                            
+                         </div>
+
+                         <div class="videos-sec-all col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mt-4 mb-4 ">
+                            <div class="box-vid mb-3" style="" >
+                                <div class="capa-transparente" onclick="cambiarVideo( 'https://www.youtube.com/embed/pLlz4h5WRq0' )"></div>
+                                <iframe class="rep-vid" src="https://www.youtube.com/embed/pLlz4h5WRq0" frameborder="0" style="" ></iframe>   
+                            </div>
+                            <div class="box-vid mb-3" style="" >
+                                <div class="capa-transparente" onclick="cambiarVideo( 'https://www.youtube.com/embed/xkvQQJzeDmY' )"></div>
+                                <iframe class="rep-vid" src="https://www.youtube.com/embed/xkvQQJzeDmY" frameborder="0" style="" ></iframe>   
+                            </div>
+                            <div class="box-vid mb-3" style="" >
+                                <div class="capa-transparente" onclick="cambiarVideo( 'https://www.youtube.com/embed/fNPaiZoZU0M' )"></div>
+                                <iframe class="rep-vid" src="https://www.youtube.com/embed/fNPaiZoZU0M" frameborder="0" style="" ></iframe>   
+                            </div>
+                            <div class="box-vid mb-3" style="" >
+                                <div class="capa-transparente" onclick="cambiarVideo( 'https://www.youtube.com/embed/RhAqV3uHI4U' )"></div>
+                                <iframe class="rep-vid" src="https://www.youtube.com/embed/RhAqV3uHI4U" frameborder="0" style="" ></iframe>   
+                            </div>
+                            <div class="box-vid mb-3" style="" >
+                                <div class="capa-transparente" onclick="cambiarVideo( 'https://www.youtube.com/embed/pU89OpwBgOc' )"></div>
+                                <iframe class="rep-vid" src="https://www.youtube.com/embed/pU89OpwBgOc" frameborder="0" style="" ></iframe>   
+                            </div>
+                          
+                         </div>
+                         <div class="videos-sec-rep col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 mt-4 mb-4 ">
+                             <iframe class="rep-vid" src="https://www.youtube.com/embed/pU89OpwBgOc" id="rep-vid" frameborder="0"></iframe>
+                         </div>
+                    </div>
+
+                </div>
+
+                 <div class="pub col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="height:200px;">
+                        <div class="row">
+                            <div class="col-12  col-sm-12  col-md-12  col-lg-12 col-xl-12 mt-4 mb-2 "  style="padding:0%;">
+                            <img src="/images/cerv-pub.png" alt="" style="width:100%; height:100%; padding:0%;">
+                        </div>  
+                        </div>
+                            
+                 </div>
+                 
+                 
+                 <div class="seccion-noticias col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="lo+visto">
+                    <div class="row">
+
+                        <div class="videos-sec-tit col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-2 " style="text-align:right">
+                             #LoMásVisto
+                         </div>
+                         
+                        {{#each masVistas}}
+                            {{#if @index}}
+                                    <div class="not-2-seccion col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                        <a class="capa-link" href="/noticias/noticia/{{id}}">
+                                            <div class="img-tsec-2">
+                                            <img src="/images/{{imagen}}" alt="" style="width: 100%;"> <br>
+                                            </div>
+                                            <div class="datos-tsec-2">
+                                            <div class="sec-box-not">
+                                                {{nombreSeccion}}
+                                            </div>
+                                            <div class="tit-box-not">
+                                                {{titular}} 
+                                            </div>
+                                            <div class="bajada-box-not">
+                                                {{bajada}}     
+                                            </div>        
+                                            </div>
+                                            <div style="position: absolute;top:2%;left:2%;  background-color: rgb(245, 255, 0); color:black;width:20px;text-align:center">
+                                                {{@index}}
+                                            </div>
+                                        </a>
+                                </div>
+                            {{else}}
+                                <div class="not-1-seccion col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <a class="capa-link" href="/noticias/noticia/{{id}}">
+                                        <div class="datos-tsec-1-i">
+                                             <div class="sec-box-not">
+                                                {{nombreSeccion}}
+                                            </div>
+                                            <div class="tit-box-not">
+                                                {{titular}} 
+                                            </div>
+                                            <div class="bajada-box-not">
+                                                {{bajada}}     
+                                            </div>        
+                                        </div>
+                                        <div class="img-tsec-1">
+                                            <div style="position: absolute;top:2%;left:2%;  background-color: rgb(245, 255, 0); color:black;width:20px;text-align:center">
+                                                {{@index}}
+                                            </div>
+                                            <img src="/images/{{imagen}}" alt="" > <br>
+                                        </div>
+                                    </a>
+                                </div>
+                             {{/if}}
+                        {{/each}}   
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="bor-der col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+            
+        </div>
+
+    </div>
+
+</div>

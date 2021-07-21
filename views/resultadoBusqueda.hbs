@@ -1,0 +1,191 @@
+<div class="container">
+    <div class="row"> 
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-12 mb-12" >
+
+          <div class="row" style="text-align:center;font-weight:bold;">
+            <div class="col-0 col-sm-0 col-md-0 col-lg-2 col-xl-2  " >
+                    <a href="" style="width: 100%;heigth:100%;text-decoration:none;color:black;">
+                    <div class="mt-1 " style="position: relative;">
+                        <img src="/images/logo-news.png" alt="" style="width: 100%;">
+                    </div> 
+                </a>        
+            </div>
+
+            <div class="col-0 col-sm-0 col-md-0 col-lg-2 col-xl-2" style="background-color:rgb(245, 255, 0);" id="nav-home">
+                <a href="/" style="width: 100%;heigth:100%;text-decoration:none;color:black;">
+                    <div class="mt-4 pt-2 home-btn" style="position: relative;">
+                        HOME
+                    </div> 
+                </a>
+            </div>
+            <div class="col-0 col-sm-0 col-md-0 col-lg-2 col-xl-2 " style="position: relative;background-color: #41464b " onmouseover="desplegarSeccion()" onmouseout="esconderSeccion()" > 
+                 <div class="mt-4 pt-2 home-sec" style="position: relative;color:rgb(245, 255, 0);">
+                    SECCIONES
+                 </div> 
+                <div id="dropdown-secc" class="des-down"  >
+                     {{#each secciones}}
+                        <div class="mt-2 mb-2 desp-sec" >
+                            <a href="/noticias/seccion/{{id}}" style="text-decoration: none;  ">{{nombre}}</a>
+                        </div>
+                    {{/each}}
+                </div>
+
+            </div>
+
+            <div class="search-form col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pt-4 pb-4" >
+                <form  class="d-flex " method="post" action ="/noticias/buscar" >
+                    <input class="form-control"  type="search" placeholder="Search..." aria-label="Search" name="dato" id="dato">
+                    <button class="btn search-btn"  type="submit"><i class="fas fa-search  "></i></button>
+                </form>
+            </div>
+
+           </div>          
+
+        </div>
+
+        <div class="bor-izq col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 ">
+            <div class="navbar-secciones " >
+                <div class="bar-secc " >
+                    <div class="tit-secc">
+                        Navegá con <br>
+                        un click!
+                    </div> 
+
+                    <div class="mt-2 mb-2 sec-a" >
+                        <a href="#restultadoPorTitulo">#RestultadoPorTitulo</a>
+                    </div>
+                    <div class="mt-2 mb-2 sec-a" >
+                        <a href="#otrasNoticias">#otrasNoticias</a>
+                    </div>
+                    <div class="mt-2 mb-2 sec-a" >
+                        <a href="#masNoticias">#MásNoticias</a>
+                    </div>
+
+                    <div class="bar-sec-redes">
+                       <a href=""> Facebook</a> | <a href="">Youtube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="centro-noticias col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+            <div class="row">                                            
+                <div class="seccion-noticias col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"  id="restultadoPorTitulo">
+                    <div class="row">
+                        {{#each busquedaTitular}}
+                            {{#if @index}}
+                                <div class="not-2-seccion col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                    <a class="capa-link" href="/noticias/noticia/{{id}}">
+                                        <div class="img-tsec-2">
+                                            <img src="/images/{{imagen}}" alt="" > <br>
+                                        </div>
+                                        <div class="datos-tsec-2">
+                                            <div class="sec-box-not">
+                                                {{nombreSeccion}}
+                                            </div>
+                                            <div class="tit-box-not">
+                                                {{titular}} 
+                                            </div>                                     
+                                        </div>
+                                    </a>
+                                </div>
+                            {{else}}
+                                <div class="not-1-seccion col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <a class="capa-link" href="/noticias/noticia/{{id}}">
+                                        <div class="datos-tsec-1-i">
+                                             <div class="sec-box-not">
+                                                {{nombreSeccion}}
+                                            </div>
+                                            <div class="tit-box-not">
+                                                {{titular}} 
+                                            </div>      
+                                        </div>
+                                        <div class="img-tsec-1">
+                                            <img src="/images/{{imagen}}" alt="" > <br>
+                                        </div>
+                                    </a>
+                                </div>
+                             {{/if}}
+                        {{/each}}   
+
+                    </div>
+
+                </div>
+
+                <div class="seccion-noticias col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"  id="otrasNoticias">
+                    <div class="row">
+                        {{#each busquedaBajada}}
+                                <div class="not-2-seccion col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                 <a class="capa-link" href="/noticias/noticia/{{id}}">
+                                    <div class="img-tsec-2">
+                                        <img src="/images/{{imagen}}" alt="" "> <br>
+                                    </div>
+                                    <div class="datos-tsec-2">
+                                         <div class="sec-box-not">
+                                                {{nombreSeccion}}
+                                            </div>
+                                            <div class="tit-box-not">
+                                                {{titular}} 
+                                            </div>   
+                                    </div>
+                                    </a>
+                                </div>
+                             
+                             
+                        {{/each}}  
+
+                    </div>
+
+                </div>
+
+
+                 <div class="pub col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="height:200px;">
+                        <div class="row">
+                            <div class="col-12  col-sm-12  col-md-12  col-lg-12 col-xl-12 mt-4 mb-2 "  style="padding:0%;">
+                            <img src="/images/cerv-pub.png" alt="" style="width:100%; height:100%; padding:0%;">
+                        </div>  
+                        </div>
+                            
+                 </div>
+                 
+                 
+                 <div class="seccion-noticias col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="masNoticias">
+                    <div class="row">
+
+                        <div class="videos-sec-tit col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-2 " style="text-align:right">
+                             #MásNoticias
+                         </div>
+                         
+                        {{#each busquedaCuerpo}}
+                                    <div class="not-2-seccion col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                        <a class="capa-link" href="/noticias/noticia/{{id}}">
+                                            <div class="img-tsec-2">
+                                            <img src="/images/{{imagen}}" alt="" > <br>
+                                            </div>
+                                            <div class="datos-tsec-2">
+                                            <div class="sec-box-not">
+                                                {{nombreSeccion}}
+                                            </div>
+                                            <div class="tit-box-not">
+                                                {{titular}} 
+                                            </div>
+                                                  
+                                            </div>
+                                        </a>
+                                </div>
+                        {{/each}}   
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="bor-der col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+            
+        </div>
+
+    </div>
+
+</div>
