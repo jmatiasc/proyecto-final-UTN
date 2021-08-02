@@ -11,7 +11,7 @@ const getAllUsuarios = async() => {
 }
 
 const getSingleUsuario = async(id) =>{
-    const query = "SELECT u.id, u.nombre, u.apellido, u.admin, u.img, u.habilitado, u.pass FROM ?? AS u WHERE u.id = ?";
+    const query = "SELECT u.id, u.nombre, u.apellido, u.admin, u.img, u.email,  u.habilitado, u.pass FROM ?? AS u WHERE u.id = ?";
     const params = [T_USUARIOS, id];
     const ret = await pool.query(query, params);
     return ret;

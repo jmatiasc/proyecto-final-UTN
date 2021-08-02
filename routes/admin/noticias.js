@@ -4,7 +4,7 @@ const multer = require('multer');
 const config = { dest: './public/tmp'};
 const upload = multer(config);
 const {addImagen}  = require('./../../services/imagenes');
-const {getSigleNoticia,getAllNoticiasUsuario} = require('./../../models/noticias');
+const {getSigleNoticia,getAllNoticiasUsuario, habilitarDeshabilitarNoticia} = require('./../../models/noticias');
 const {getAllSecciones} = require('./../../models/secciones');
 const { addNoticia, editNoticia } = require('../../services/noticias');
 const {getSingleUsuario,} = require('../../models/usuarios');
@@ -69,10 +69,24 @@ const editarNoticia = async (req, res) =>{
     res.render('agregarImagen',{noticia});
   }
 
+  const habilitar = async (req, res) =>{
+    const {id} = req.params;
+    const usuario = await habilitarDeshabilitarNoticia(id,1);
+    res.redirect('/usuario');
+  }
+  
+  const deshabilitar = async (req, res) =>{
+    const {id} = req.params;
+    const usuario = await habilitarDeshabilitarNoticia(id,0);
+    res.redirect('/usuario');
+  }
+
 router.get('/create', crearNoticiaView);
 router.post('/create',upload.single("imagen"), createNoticia);
 router.get('/editar/:id',editarNoticiaView);
 router.post('/editar/:id',upload.single("imagen"),editarNoticia);
 router.get('/agregarImagen/:id',agregarImagenView);
 router.post('/agregarImagen/:id',upload.single("imagen"), agregarImagen);
+router.get('/habilitar/:id', habilitar);
+router.get('/deshabilitar/:id', deshabilitar);
 module.exports = router;

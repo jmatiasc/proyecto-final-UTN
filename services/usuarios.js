@@ -69,8 +69,7 @@ const editUsuario = async(body,file,id) => {
                 nombre: body.nombre,
                 apellido: body.apellido,
                 email:body.email,
-                img: img,
-                pass:body.pass
+                img: img
             };
 
             return await editarUsuario(id,obj);
@@ -80,8 +79,7 @@ const editUsuario = async(body,file,id) => {
             const obj = {
                 nombre: body.nombre,
                 apellido: body.apellido,
-                email:body.email,
-                pass:body.pass
+                email:body.email
             };
 
             return await editarUsuario(id,obj);

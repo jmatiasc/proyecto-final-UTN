@@ -107,9 +107,19 @@
                                                                 <div class="tit-box-not">
                                                                     {{titular}} 
                                                                 </div>
+                                                                {{#if habilitado}}
+                                                                    <span style="text-decoration: none;color:black"> <strong>Noticia:</strong> <span style="color:green">Habilitada</span></span>
+                                                                    {{else}}
+                                                                    <span style="text-decoration: none;color:black"> <strong>Noticia:</strong> <span style="color:red">Deshabilitada</span></span>
+                                                                {{/if}}
                                                                 <div class="op-edit-not des-op" id="op-edit-not{{id}}"  >
                                                                     <div class="btn btn-outline-warning mb-1" style="width: 100%"> <a href="/adminNoticia/editar/{{id}}" style="width: 100%;text-decoration:none;color:black;"> editar </a></div>
                                                                     <div class="btn btn-outline-warning" style="width: 100%;"> <a href="/adminNoticia/agregarImagen/{{id}}" style="width: 100%;text-decoration:none;color:black;">agregarImagen</a></div>
+                                                                    {{#if habilitado}}
+                                                                    <div class="btn btn-outline-warning" style="width: 100%;"> <a href="/adminNoticia/deshabilitar/{{id}}" style="width: 100%;text-decoration:none;color:black;">deshabilitar</a></div>
+                                                                    {{else}}
+                                                                    <div class="btn btn-outline-warning" style="width: 100%;"> <a href="/adminNoticia/habilitar/{{id}}" style="width: 100%;text-decoration:none;color:black;">habilitar</a></div>                                                                    
+                                                                    {{/if}}
                                                                 </div>                                       
                                                             </div>
                                                         </a>

@@ -63,7 +63,7 @@ const getUltimasNoticiasForSeccion= async( seccion ) => {
 
 const getAllNoticiasUsuario= async( usuario ) => {
     //trae todas las noticas escritas por el usuario pasado por parametro, lo que recibimos por parametro es el id del usuario
-    const query = "SELECT n.id, n.titular, n.bajada, n.vistas, n.ts_create , n.ts_update, n.cuerpo, n.imagen, n.epigrafe, s.nombre AS nombreSeccion FROM ?? AS n JOIN ?? AS s ON n.id_seccion = s.id WHERE n.id_autor = ? ";
+    const query = "SELECT n.id, n.titular, n.bajada, n.vistas, n.ts_create , n.ts_update, n.cuerpo, n.imagen, n.epigrafe,n.habilitado, s.nombre AS nombreSeccion FROM ?? AS n JOIN ?? AS s ON n.id_seccion = s.id WHERE n.id_autor = ? ";
     const params = [T_NOTICIAS, T_SECCIONES,usuario];
     const ret = await pool.query(query, params);
     return ret;

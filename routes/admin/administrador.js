@@ -33,13 +33,13 @@ const crearUsuario = async (req, res) =>{
 const habilitar = async (req, res) =>{
   const {id} = req.params;
   const usuario = await habilitarDeshabilitarUsuario(id,1);
-  res.redirect('/administrador');
+  res.redirect('/usuario');
 }
 
 const deshabilitar = async (req, res) =>{
   const {id} = req.params;
   const usuario = await habilitarDeshabilitarUsuario(id,0);
-  res.redirect('/administrador');
+  res.redirect('/usuario');
 }
 
 
